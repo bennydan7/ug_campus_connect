@@ -151,6 +151,7 @@ export const events: EventItem[] = [
     ],
     bannerUrl:
       "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1400&auto=format&fit=crop",
+    description: "Browse and support student art across disciplines — paintings, sculpture, and live demonstrations.",
   },
   {
     id: "10",
@@ -165,5 +166,6 @@ export const events: EventItem[] = [
     ],
     bannerUrl:
       "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1400&auto=format&fit=crop",
+    description: "A guided mindfulness session to help reduce stress and build resilience — suitable for all levels.",
   },
 ];
