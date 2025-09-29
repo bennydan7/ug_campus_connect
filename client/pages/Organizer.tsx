@@ -37,7 +37,7 @@ export default function Organizer() {
   const myEvents = useMemo(() => events.slice(0, 10), [events]);
 
   function handlePost() {
-    const newEvent = { ...form, id: uuidv4(), attendees: 0, attendeesList: [] } as any;
+    const newEvent = { ...form, id: genId(), attendees: 0, attendeesList: [] } as any;
     setEvents((s) => [newEvent, ...s]);
     setForm({ ...form, title: "", location: "", description: "" });
     setSelectedTab("My Events");
