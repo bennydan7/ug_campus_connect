@@ -50,7 +50,7 @@ export default function Header() {
           >
             <Search className="h-5 w-5" />
           </button>
-          <button className="hidden h-10 w-10 items-center justify-center rounded-full bg-muted shadow hover:brightness-95 md:flex">
+          <button onClick={() => navigate('/organizer')} className="hidden h-10 w-10 items-center justify-center rounded-full bg-muted shadow hover:brightness-95 md:flex">
             <Menu className="h-5 w-5 text-foreground" />
           </button>
         </div>
