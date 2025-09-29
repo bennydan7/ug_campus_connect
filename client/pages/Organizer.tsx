@@ -22,8 +22,9 @@ type EventForm = {
 };
 
 export default function Organizer() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [user, setUser] = useState({ name: "Organizer" });
+  const { user, login, logout } = useAuth();
+  const navigate = useNavigate();
+  const isLoggedIn = !!user;
   const [events, setEvents] = useState(allEventsData);
   const [selectedTab, setSelectedTab] = useState<"My Events" | "Create Event" | "Analytics">("My Events");
   const [form, setForm] = useState<EventForm>({
