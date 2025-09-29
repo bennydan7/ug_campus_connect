@@ -1,5 +1,10 @@
 import { CalendarClock, MapPin } from "lucide-react";
 
+export interface Attendee {
+  name: string;
+  avatarUrl?: string;
+}
+
 export interface EventItem {
   id: string;
   title: string;
@@ -9,6 +14,7 @@ export interface EventItem {
   category: "Academic" | "Social" | "Sports" | "Career" | "Arts" | "Health";
   bannerUrl: string;
   attendees?: number;
+  attendeesList?: Attendee[];
 }
 
 function formatDate(d: string) {
@@ -20,7 +26,19 @@ function formatDate(d: string) {
   });
 }
 
+function initials(name: string) {
+  return name
+    .split(" ")
+    .map((n) => n[0])
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
+}
+
 export default function EventCard({ event }: { event: EventItem }) {
+  const displayed = event.attendeesList ? event.attendeesList.slice(0, 4) : [];
+  const extra = (event.attendees ?? 0) - displayed.length;
+
   return (
     <article className="overflow-hidden rounded-2xl bg-card shadow-[0_10px_30px_rgba(0,0,0,0.07)] transition hover:-translate-y-0.5 hover:shadow-[0_14px_36px_rgba(0,0,0,0.10)]">
       <div className="relative h-48 w-full overflow-hidden bg-muted">
@@ -48,12 +66,31 @@ export default function EventCard({ event }: { event: EventItem }) {
         <div className="mt-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="flex -space-x-2">
-              <div className="h-8 w-8 rounded-full bg-primary/70 border-2 border-white" />
-              <div className="h-8 w-8 rounded-full bg-secondary/70 border-2 border-white" />
-              <div className="h-8 w-8 rounded-full bg-accent/70 border-2 border-white" />
+              {displayed.map((a, i) => (
+                <div key={i} className="relative h-8 w-8 flex-shrink-0">
+                  {a.avatarUrl ? (
+                    // eslint-disable-next-line jsx-a11y/img-redundant-alt
+                    <img
+                      src={a.avatarUrl}
+                      alt={`Avatar of ${a.name}`}
+                      className="h-8 w-8 rounded-full border-2 border-white object-cover"
+                    />
+                  ) : (
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-muted text-sm font-semibold text-foreground border-2 border-white">
+                      {initials(a.name)}
+                    </div>
+                  )}
+                </div>
+              ))}
+
+              {extra > 0 && (
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-muted text-xs font-semibold text-foreground border-2 border-white">
+                  +{extra}
+                </div>
+              )}
             </div>
             <div className="text-sm text-muted-foreground">
-              {event.attendees ? `+${event.attendees} attending` : "—"}
+              {event.attendees ? `${event.attendees} attending` : "—"}
             </div>
           </div>
           <button className="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow hover:brightness-95">
