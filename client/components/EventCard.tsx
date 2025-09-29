@@ -6,8 +6,9 @@ export interface EventItem {
   dateISO: string; // e.g., 2025-10-12
   time: string; // e.g., 5:30 PM - 7:00 PM
   location: string;
-  category: "Academic" | "Social" | "Sports" | "Career";
+  category: "Academic" | "Social" | "Sports" | "Career" | "Arts" | "Health";
   bannerUrl: string;
+  attendees?: number;
 }
 
 function formatDate(d: string) {
@@ -41,6 +42,23 @@ export default function EventCard({ event }: { event: EventItem }) {
             <MapPin className="h-4 w-4" />
             <span>{event.location}</span>
           </div>
+        </div>
+
+        {/* Footer: attendees + RSVP */}
+        <div className="mt-3 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="flex -space-x-2">
+              <div className="h-8 w-8 rounded-full bg-primary/70 border-2 border-white" />
+              <div className="h-8 w-8 rounded-full bg-secondary/70 border-2 border-white" />
+              <div className="h-8 w-8 rounded-full bg-accent/70 border-2 border-white" />
+            </div>
+            <div className="text-sm text-muted-foreground">
+              {event.attendees ? `+${event.attendees} attending` : "—"}
+            </div>
+          </div>
+          <button className="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow hover:brightness-95">
+            RSVP
+          </button>
         </div>
       </div>
     </article>
