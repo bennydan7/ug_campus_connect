@@ -52,6 +52,7 @@ export const events: EventItem[] = [
     ],
     bannerUrl:
       "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1400&auto=format&fit=crop",
+    description: "Meet top employers from tech, finance, and healthcare. Bring resumes and business cards. Workshops and interviews on site.",
   },
   {
     id: "4",
