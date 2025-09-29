@@ -20,8 +20,12 @@ export default function Header() {
             <GraduationCap className="h-6 w-6" />
           </div>
           <div className="leading-tight">
-            <div className="text-lg font-extrabold tracking-tight">UG Campus Connect</div>
-            <div className="text-xs text-muted-foreground">Discover • Join • Connect</div>
+            <div className="text-lg font-extrabold tracking-tight">
+              UG Campus Connect
+            </div>
+            <div className="text-xs text-muted-foreground">
+              Discover • Join • Connect
+            </div>
           </div>
         </div>
 
@@ -40,10 +44,18 @@ export default function Header() {
 
         {/* Icons */}
         <div className="ml-2 flex items-center gap-2">
-          <button onClick={() => { window.location.href = '/calendar'; }} className="grid h-10 w-10 place-items-center rounded-full bg-secondary text-secondary-foreground shadow hover:brightness-95">
+          <button
+            onClick={() => {
+              window.location.href = "/calendar";
+            }}
+            className="grid h-10 w-10 place-items-center rounded-full bg-secondary text-secondary-foreground shadow hover:brightness-95"
+          >
             <CalendarDays className="h-5 w-5" />
           </button>
-          <button onClick={() => navigate('/notifications')} className="grid h-10 w-10 place-items-center rounded-full bg-secondary text-secondary-foreground shadow hover:brightness-95">
+          <button
+            onClick={() => navigate("/notifications")}
+            className="grid h-10 w-10 place-items-center rounded-full bg-secondary text-secondary-foreground shadow hover:brightness-95"
+          >
             <Bell className="h-5 w-5" />
           </button>
           <button
@@ -54,7 +66,10 @@ export default function Header() {
             <Search className="h-5 w-5" />
           </button>
           <div className="relative">
-            <button onClick={() => setMenuOpen((v) => !v)} className="hidden h-10 w-10 items-center justify-center rounded-full bg-muted shadow hover:brightness-95 md:flex">
+            <button
+              onClick={() => setMenuOpen((v) => !v)}
+              className="hidden h-10 w-10 items-center justify-center rounded-full bg-muted shadow hover:brightness-95 md:flex"
+            >
               <Menu className="h-5 w-5 text-foreground" />
             </button>
 
@@ -63,15 +78,58 @@ export default function Header() {
                 <div className="flex flex-col gap-2">
                   {!user ? (
                     <>
-                      <button onClick={() => { setMenuOpen(false); navigate('/login'); }} className="text-left rounded-md px-3 py-2 text-sm hover:bg-muted/50">Login</button>
-                      <button onClick={() => { setMenuOpen(false); navigate('/signup'); }} className="text-left rounded-md px-3 py-2 text-sm hover:bg-muted/50">Sign up</button>
+                      <button
+                        onClick={() => {
+                          setMenuOpen(false);
+                          navigate("/login");
+                        }}
+                        className="text-left rounded-md px-3 py-2 text-sm hover:bg-muted/50"
+                      >
+                        Login
+                      </button>
+                      <button
+                        onClick={() => {
+                          setMenuOpen(false);
+                          navigate("/signup");
+                        }}
+                        className="text-left rounded-md px-3 py-2 text-sm hover:bg-muted/50"
+                      >
+                        Sign up
+                      </button>
                     </>
                   ) : (
                     <>
-                      <div className="px-3 py-2 text-sm font-semibold">Hello, {user.name}</div>
-                      <button onClick={() => { setMenuOpen(false); navigate('/organizer'); }} className="text-left rounded-md px-3 py-2 text-sm hover:bg-muted/50">Organizer Dashboard</button>
-                      <button onClick={() => { setMenuOpen(false); navigate('/notifications'); }} className="text-left rounded-md px-3 py-2 text-sm hover:bg-muted/50">Notifications</button>
-                      <button onClick={() => { logout(); setMenuOpen(false); navigate('/'); }} className="text-left rounded-md px-3 py-2 text-sm text-destructive hover:bg-muted/50">Logout</button>
+                      <div className="px-3 py-2 text-sm font-semibold">
+                        Hello, {user.name}
+                      </div>
+                      <button
+                        onClick={() => {
+                          setMenuOpen(false);
+                          navigate("/organizer");
+                        }}
+                        className="text-left rounded-md px-3 py-2 text-sm hover:bg-muted/50"
+                      >
+                        Organizer Dashboard
+                      </button>
+                      <button
+                        onClick={() => {
+                          setMenuOpen(false);
+                          navigate("/notifications");
+                        }}
+                        className="text-left rounded-md px-3 py-2 text-sm hover:bg-muted/50"
+                      >
+                        Notifications
+                      </button>
+                      <button
+                        onClick={() => {
+                          logout();
+                          setMenuOpen(false);
+                          navigate("/");
+                        }}
+                        className="text-left rounded-md px-3 py-2 text-sm text-destructive hover:bg-muted/50"
+                      >
+                        Logout
+                      </button>
                     </>
                   )}
                 </div>

@@ -11,16 +11,47 @@ type Notification = {
 };
 
 const sample: Notification[] = [
-  { id: "n1", type: "reminder", title: "Tech Talk: Intro to AI", message: "Starts in 1 hour", timeAgo: "10 mins ago", read: false },
-  { id: "n2", type: "rsvp", title: "Career Fair: Meet Top Employers", message: "Your RSVP confirmed", timeAgo: "1 hr ago", read: false },
-  { id: "n3", type: "venue", title: "Intramural Soccer", message: "Venue updated: Field B", timeAgo: "3 hrs ago", read: true },
-  { id: "n4", type: "reminder", title: "Open Mic Night", message: "Starts tomorrow", timeAgo: "Yesterday", read: true },
+  {
+    id: "n1",
+    type: "reminder",
+    title: "Tech Talk: Intro to AI",
+    message: "Starts in 1 hour",
+    timeAgo: "10 mins ago",
+    read: false,
+  },
+  {
+    id: "n2",
+    type: "rsvp",
+    title: "Career Fair: Meet Top Employers",
+    message: "Your RSVP confirmed",
+    timeAgo: "1 hr ago",
+    read: false,
+  },
+  {
+    id: "n3",
+    type: "venue",
+    title: "Intramural Soccer",
+    message: "Venue updated: Field B",
+    timeAgo: "3 hrs ago",
+    read: true,
+  },
+  {
+    id: "n4",
+    type: "reminder",
+    title: "Open Mic Night",
+    message: "Starts tomorrow",
+    timeAgo: "Yesterday",
+    read: true,
+  },
 ];
 
 export default function Notifications() {
   const [notes, setNotes] = useState<Notification[]>(sample);
 
-  const unreadCount = useMemo(() => notes.filter((n) => !n.read).length, [notes]);
+  const unreadCount = useMemo(
+    () => notes.filter((n) => !n.read).length,
+    [notes],
+  );
 
   function markAllRead() {
     setNotes((s) => s.map((n) => ({ ...n, read: true })));
@@ -43,28 +74,51 @@ export default function Notifications() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-xl font-semibold">Notifications</h1>
-              <p className="text-sm text-muted-foreground">You have {unreadCount} unread notifications</p>
+              <p className="text-sm text-muted-foreground">
+                You have {unreadCount} unread notifications
+              </p>
             </div>
             <div>
-              <button onClick={markAllRead} className="rounded-md bg-primary px-3 py-2 text-sm font-semibold text-primary-foreground">Mark all as read</button>
+              <button
+                onClick={markAllRead}
+                className="rounded-md bg-primary px-3 py-2 text-sm font-semibold text-primary-foreground"
+              >
+                Mark all as read
+              </button>
             </div>
           </div>
 
           <div className="mt-6 space-y-3">
             {notes.map((n) => (
-              <div key={n.id} className={`flex items-start gap-4 rounded-lg p-4 ${n.read ? 'bg-gray-50' : 'bg-primary/10'} border`}>
-                <div className="shrink-0 rounded-md bg-white p-2 shadow-sm">{iconFor(n.type)}</div>
+              <div
+                key={n.id}
+                className={`flex items-start gap-4 rounded-lg p-4 ${n.read ? "bg-gray-50" : "bg-primary/10"} border`}
+              >
+                <div className="shrink-0 rounded-md bg-white p-2 shadow-sm">
+                  {iconFor(n.type)}
+                </div>
                 <div className="flex-1">
                   <div className="flex items-center justify-between gap-3">
                     <div>
                       <div className="font-semibold">{n.title}</div>
-                      <div className="text-sm text-muted-foreground">{n.message}</div>
+                      <div className="text-sm text-muted-foreground">
+                        {n.message}
+                      </div>
                     </div>
-                    <div className="text-xs text-muted-foreground">{n.timeAgo}</div>
+                    <div className="text-xs text-muted-foreground">
+                      {n.timeAgo}
+                    </div>
                   </div>
                   <div className="mt-2 flex items-center gap-2">
-                    <button onClick={() => toggleRead(n.id)} className="text-sm text-primary underline">{n.read ? 'Mark unread' : 'Mark read'}</button>
-                    <button className="text-sm text-muted-foreground">View event</button>
+                    <button
+                      onClick={() => toggleRead(n.id)}
+                      className="text-sm text-primary underline"
+                    >
+                      {n.read ? "Mark unread" : "Mark read"}
+                    </button>
+                    <button className="text-sm text-muted-foreground">
+                      View event
+                    </button>
                   </div>
                 </div>
               </div>

@@ -14,7 +14,9 @@ export default function EventDetails() {
       <div className="container mx-auto py-20">
         <div className="rounded-xl bg-white p-8 text-center shadow">
           <h2 className="text-xl font-semibold">Event not found</h2>
-          <p className="mt-2 text-sm text-muted-foreground">We couldn't find the event you're looking for.</p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            We couldn't find the event you're looking for.
+          </p>
           <div className="mt-4">
             <Link to="/" className="text-primary underline">
               Return home
@@ -25,7 +27,9 @@ export default function EventDetails() {
     );
   }
 
-  const related = allEvents.filter((e) => e.id !== event.id && e.category === event.category).slice(0, 4);
+  const related = allEvents
+    .filter((e) => e.id !== event.id && e.category === event.category)
+    .slice(0, 4);
 
   return (
     <main className="min-h-screen bg-background/50 pb-12">
@@ -33,7 +37,11 @@ export default function EventDetails() {
         <div className="rounded-2xl bg-white p-0 shadow overflow-hidden">
           {/* Banner */}
           <div className="relative h-64 w-full">
-            <img src={event.bannerUrl} alt={event.title} className="h-full w-full object-cover" />
+            <img
+              src={event.bannerUrl}
+              alt={event.title}
+              className="h-full w-full object-cover"
+            />
             <div className="absolute left-6 top-6 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-foreground shadow">
               {event.category}
             </div>
@@ -48,7 +56,9 @@ export default function EventDetails() {
                 <div className="inline-flex items-center gap-2 rounded-full bg-secondary/60 px-3 py-2 text-secondary-foreground">
                   <CalendarClock className="h-4 w-4" />
                   <div>
-                    <div className="font-medium text-foreground">{new Date(event.dateISO).toDateString()}</div>
+                    <div className="font-medium text-foreground">
+                      {new Date(event.dateISO).toDateString()}
+                    </div>
                     <div>{event.time}</div>
                   </div>
                 </div>
@@ -56,23 +66,27 @@ export default function EventDetails() {
                 <div className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-3 py-2 text-accent">
                   <MapPin className="h-4 w-4" />
                   <div>
-                    <div className="font-medium text-foreground">{event.location}</div>
+                    <div className="font-medium text-foreground">
+                      {event.location}
+                    </div>
                   </div>
                 </div>
 
                 <div className="ml-auto flex items-center gap-3">
                   <button
                     onClick={() => setRsvped((s) => !s)}
-                    className={`rounded-full px-4 py-2 text-sm font-semibold shadow ${rsvped ? 'bg-muted text-foreground' : 'bg-primary text-primary-foreground'}`}
+                    className={`rounded-full px-4 py-2 text-sm font-semibold shadow ${rsvped ? "bg-muted text-foreground" : "bg-primary text-primary-foreground"}`}
                   >
-                    {rsvped ? 'Joined' : 'RSVP'}
+                    {rsvped ? "Joined" : "RSVP"}
                   </button>
                 </div>
               </div>
 
               <section className="prose max-w-none mt-4">
                 <h3 className="text-lg font-semibold">About this event</h3>
-                <p className="text-sm text-muted-foreground">{event.description || 'No description provided.'}</p>
+                <p className="text-sm text-muted-foreground">
+                  {event.description || "No description provided."}
+                </p>
 
                 <h4 className="mt-4 text-md font-semibold">Details</h4>
                 <ul className="mt-2 list-inside list-disc text-sm text-muted-foreground">
@@ -98,7 +112,9 @@ export default function EventDetails() {
                       />
                     ))}
                   </div>
-                  <div className="text-sm text-muted-foreground">{event.attendees ?? 0} attending</div>
+                  <div className="text-sm text-muted-foreground">
+                    {event.attendees ?? 0} attending
+                  </div>
                 </div>
               </div>
 
@@ -106,11 +122,11 @@ export default function EventDetails() {
                 <div className="text-sm font-medium">Related events</div>
                 <div className="mt-3 space-y-3">
                   {related.length === 0 ? (
-                    <div className="text-sm text-muted-foreground">No related events</div>
+                    <div className="text-sm text-muted-foreground">
+                      No related events
+                    </div>
                   ) : (
-                    related.map((r) => (
-                      <EventCard key={r.id} event={r} />
-                    ))
+                    related.map((r) => <EventCard key={r.id} event={r} />)
                   )}
                 </div>
               </div>

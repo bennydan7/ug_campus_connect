@@ -45,7 +45,9 @@ function getMonthMatrix(year: number, month: number) {
   if (week.length > 0) {
     const need = 7 - week.length;
     for (let i = 1; i <= need; i++) {
-      week.push(new Date(last.getFullYear(), last.getMonth(), last.getDate() + i));
+      week.push(
+        new Date(last.getFullYear(), last.getMonth(), last.getDate() + i),
+      );
     }
     matrix.push(week);
   }
@@ -62,7 +64,10 @@ export default function Calendar() {
   const [viewMonth, setViewMonth] = useState(today.getMonth());
   const [selectedDate, setSelectedDate] = useState<Date | null>(today);
 
-  const matrix = useMemo(() => getMonthMatrix(viewYear, viewMonth), [viewYear, viewMonth]);
+  const matrix = useMemo(
+    () => getMonthMatrix(viewYear, viewMonth),
+    [viewYear, viewMonth],
+  );
 
   const eventsByDate = useMemo(() => {
     const map = new Map<string, typeof allEvents>();
@@ -72,7 +77,9 @@ export default function Calendar() {
     return map;
   }, []);
 
-  const monthName = new Date(viewYear, viewMonth, 1).toLocaleString(undefined, { month: "long" });
+  const monthName = new Date(viewYear, viewMonth, 1).toLocaleString(undefined, {
+    month: "long",
+  });
 
   function prevMonth() {
     if (viewMonth === 0) {
@@ -97,7 +104,9 @@ export default function Calendar() {
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-lg font-semibold">Calendar</h2>
-              <p className="text-sm text-muted-foreground">Monthly view — click a date to see events</p>
+              <p className="text-sm text-muted-foreground">
+                Monthly view — click a date to see events
+              </p>
             </div>
             <div className="flex items-center gap-3">
               <button
@@ -108,7 +117,9 @@ export default function Calendar() {
                 <ChevronLeft className="h-5 w-5" />
               </button>
               <div className="px-3 text-center">
-                <div className="text-sm font-medium">{monthName} {viewYear}</div>
+                <div className="text-sm font-medium">
+                  {monthName} {viewYear}
+                </div>
               </div>
               <button
                 onClick={nextMonth}
@@ -123,8 +134,13 @@ export default function Calendar() {
           {/* Calendar grid */}
           <div className="mt-6 grid grid-cols-7 gap-2">
             {/* Weekdays */}
-            {['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].map((d) => (
-              <div key={d} className="text-xs text-muted-foreground text-center">{d}</div>
+            {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((d) => (
+              <div
+                key={d}
+                className="text-xs text-muted-foreground text-center"
+              >
+                {d}
+              </div>
             ))}
 
             {matrix.map((week, wi) => (
@@ -138,23 +154,34 @@ export default function Calendar() {
                     <button
                       key={di}
                       onClick={() => setSelectedDate(d)}
-                      className={`group relative flex h-20 flex-col items-start justify-start gap-2 rounded-lg border px-2 py-2 text-left hover:bg-primary/5 ${inMonth ? '' : 'opacity-50'} ${selectedISO === iso ? 'ring-2 ring-primary/30' : ''}`}
+                      className={`group relative flex h-20 flex-col items-start justify-start gap-2 rounded-lg border px-2 py-2 text-left hover:bg-primary/5 ${inMonth ? "" : "opacity-50"} ${selectedISO === iso ? "ring-2 ring-primary/30" : ""}`}
                     >
                       <div className="flex w-full items-start justify-between">
-                        <div className="text-sm font-medium text-foreground">{d.getDate()}</div>
+                        <div className="text-sm font-medium text-foreground">
+                          {d.getDate()}
+                        </div>
                         {/* small banners for today */}
                         {iso === isoDate(new Date()) && (
-                          <div className="rounded-full bg-primary/10 px-2 py-0.5 text-xs text-primary">Today</div>
+                          <div className="rounded-full bg-primary/10 px-2 py-0.5 text-xs text-primary">
+                            Today
+                          </div>
                         )}
                       </div>
 
                       <div className="mt-auto flex w-full items-end gap-1">
                         {/* colored dots */}
                         <div className="flex items-center gap-1">
-                          {evts.slice(0,3).map((e, i) => (
-                            <span key={i} className={`${categoryColor[e.category] || 'bg-gray-400'} inline-block h-2 w-2 rounded-full`} />
+                          {evts.slice(0, 3).map((e, i) => (
+                            <span
+                              key={i}
+                              className={`${categoryColor[e.category] || "bg-gray-400"} inline-block h-2 w-2 rounded-full`}
+                            />
                           ))}
-                          {evts.length > 3 && <span className="text-xs text-muted-foreground">+{evts.length - 3}</span>}
+                          {evts.length > 3 && (
+                            <span className="text-xs text-muted-foreground">
+                              +{evts.length - 3}
+                            </span>
+                          )}
                         </div>
                       </div>
                     </button>
@@ -166,14 +193,16 @@ export default function Calendar() {
 
           {/* Selected date events */}
           <div className="mt-6">
-            <div className="text-sm font-medium">Events on {selectedDate ? selectedDate.toDateString() : '—'}</div>
+            <div className="text-sm font-medium">
+              Events on {selectedDate ? selectedDate.toDateString() : "—"}
+            </div>
             <div className="mt-3 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {selectedEvents.length === 0 ? (
-                <div className="rounded-lg border bg-white p-4 text-sm text-muted-foreground">No events for this date.</div>
+                <div className="rounded-lg border bg-white p-4 text-sm text-muted-foreground">
+                  No events for this date.
+                </div>
               ) : (
-                selectedEvents.map((e) => (
-                  <EventCard key={e.id} event={e} />
-                ))
+                selectedEvents.map((e) => <EventCard key={e.id} event={e} />)
               )}
             </div>
           </div>

@@ -8,7 +8,7 @@ export default function Logout() {
 
   function handleLogout() {
     logout();
-    navigate('/');
+    navigate("/");
   }
 
   return (
@@ -17,12 +17,26 @@ export default function Logout() {
         <div className="mx-auto mb-4 grid h-16 w-16 place-items-center rounded-full bg-destructive text-destructive-foreground">
           <LogOut className="h-6 w-6" />
         </div>
-        <h2 className="text-xl font-semibold">Are you sure you want to log out?</h2>
-        <p className="mt-2 text-sm text-muted-foreground">You'll need to sign in again to manage your events.</p>
+        <h2 className="text-xl font-semibold">
+          Are you sure you want to log out?
+        </h2>
+        <p className="mt-2 text-sm text-muted-foreground">
+          You'll need to sign in again to manage your events.
+        </p>
 
         <div className="mt-6 flex items-center justify-center gap-3">
-          <button onClick={handleLogout} className="rounded-full bg-destructive px-4 py-2 font-semibold text-destructive-foreground">Logout</button>
-          <button onClick={() => navigate(-1)} className="rounded-full bg-muted px-4 py-2 font-semibold">Cancel</button>
+          <button
+            onClick={handleLogout}
+            className="rounded-full bg-destructive px-4 py-2 font-semibold text-destructive-foreground"
+          >
+            Logout
+          </button>
+          <button
+            onClick={() => navigate(-1)}
+            className="rounded-full bg-muted px-4 py-2 font-semibold"
+          >
+            Cancel
+          </button>
         </div>
       </div>
     </div>

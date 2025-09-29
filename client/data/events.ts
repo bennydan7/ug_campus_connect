@@ -17,7 +17,8 @@ export const events: EventItem[] = [
     ],
     bannerUrl:
       "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1400&auto=format&fit=crop",
-    description: "Welcome new students! Join the campus tour followed by a casual mixer to meet fellow students, clubs, and faculty. Light refreshments provided.",
+    description:
+      "Welcome new students! Join the campus tour followed by a casual mixer to meet fellow students, clubs, and faculty. Light refreshments provided.",
   },
   {
     id: "2",
@@ -34,7 +35,8 @@ export const events: EventItem[] = [
     ],
     bannerUrl:
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1400&auto=format&fit=crop",
-    description: "A hands-on talk on AI & Machine Learning basics. Perfect for beginners — code samples and Q&A included.",
+    description:
+      "A hands-on talk on AI & Machine Learning basics. Perfect for beginners — code samples and Q&A included.",
   },
   {
     id: "3",
@@ -52,7 +54,8 @@ export const events: EventItem[] = [
     ],
     bannerUrl:
       "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1400&auto=format&fit=crop",
-    description: "Meet top employers from tech, finance, and healthcare. Bring resumes and business cards. Workshops and interviews on site.",
+    description:
+      "Meet top employers from tech, finance, and healthcare. Bring resumes and business cards. Workshops and interviews on site.",
   },
   {
     id: "4",
@@ -69,7 +72,8 @@ export const events: EventItem[] = [
     ],
     bannerUrl:
       "https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?q=80&w=1400&auto=format&fit=crop",
-    description: "Cheer for your team at the semi-finals — food trucks and halftime entertainment will be available.",
+    description:
+      "Cheer for your team at the semi-finals — food trucks and halftime entertainment will be available.",
   },
   {
     id: "5",
@@ -85,7 +89,8 @@ export const events: EventItem[] = [
     ],
     bannerUrl:
       "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1400&auto=format&fit=crop",
-    description: "Improve your study habits with proven techniques, time management tips, and group exercises to prepare for midterms.",
+    description:
+      "Improve your study habits with proven techniques, time management tips, and group exercises to prepare for midterms.",
   },
   {
     id: "6",
@@ -102,7 +107,8 @@ export const events: EventItem[] = [
     ],
     bannerUrl:
       "https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1400&auto=format&fit=crop",
-    description: "Showcase your talent at the Open Mic – music, poetry, and comedy welcome. Sign-up starts an hour before the show.",
+    description:
+      "Showcase your talent at the Open Mic – music, poetry, and comedy welcome. Sign-up starts an hour before the show.",
   },
   {
     id: "7",
@@ -118,7 +124,8 @@ export const events: EventItem[] = [
     ],
     bannerUrl:
       "https://images.unsplash.com/photo-1524169358666-79f22534bc6e?q=80&w=1400&auto=format&fit=crop",
-    description: "An evening to connect with mentors and peers in STEM fields. Light refreshments and mentor tables available.",
+    description:
+      "An evening to connect with mentors and peers in STEM fields. Light refreshments and mentor tables available.",
   },
   {
     id: "8",
@@ -136,7 +143,8 @@ export const events: EventItem[] = [
     ],
     bannerUrl:
       "https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1400&auto=format&fit=crop",
-    description: "Final game of the season — bring your friends and support the Eagles! Tickets available at the gate.",
+    description:
+      "Final game of the season — bring your friends and support the Eagles! Tickets available at the gate.",
   },
   {
     id: "9",
@@ -151,7 +159,8 @@ export const events: EventItem[] = [
     ],
     bannerUrl:
       "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1400&auto=format&fit=crop",
-    description: "Browse and support student art across disciplines — paintings, sculpture, and live demonstrations.",
+    description:
+      "Browse and support student art across disciplines — paintings, sculpture, and live demonstrations.",
   },
   {
     id: "10",
@@ -166,6 +175,7 @@ export const events: EventItem[] = [
     ],
     bannerUrl:
       "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1400&auto=format&fit=crop",
-    description: "A guided mindfulness session to help reduce stress and build resilience — suitable for all levels.",
+    description:
+      "A guided mindfulness session to help reduce stress and build resilience — suitable for all levels.",
   },
 ];

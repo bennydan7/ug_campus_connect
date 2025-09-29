@@ -11,7 +11,8 @@ export default function Index() {
   const events = useMemo(() => {
     const q = query.trim().toLowerCase();
     return allEvents.filter((e) => {
-      const matchesCategory = category === "All" ? true : e.category === category;
+      const matchesCategory =
+        category === "All" ? true : e.category === category;
       const hay = `${e.title} ${e.location} ${e.category}`.toLowerCase();
       const matchesQuery = q.length === 0 || hay.includes(q);
       return matchesCategory && matchesQuery;

@@ -31,18 +31,18 @@ const App = () => (
           <SearchProvider>
             <Header />
             <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/calendar" element={<Calendar />} />
-            <Route path="/events/:id" element={<EventDetails />} />
-            <Route path="/organizer" element={<Organizer />} />
-            <Route path="/notifications" element={<Notifications />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/logout" element={<Logout />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </SearchProvider>
+              <Route path="/" element={<Index />} />
+              <Route path="/calendar" element={<Calendar />} />
+              <Route path="/events/:id" element={<EventDetails />} />
+              <Route path="/organizer" element={<Organizer />} />
+              <Route path="/notifications" element={<Notifications />} />
+              <Route path="/signup" element={<SignUp />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/logout" element={<Logout />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </SearchProvider>
         </AuthProvider>
       </BrowserRouter>
     </TooltipProvider>
