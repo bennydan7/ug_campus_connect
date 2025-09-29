@@ -82,7 +82,7 @@ export default function Organizer() {
               <div className="flex items-center gap-3">
                 <div className="h-12 w-12 rounded-lg bg-primary text-primary-foreground grid place-items-center font-bold">OG</div>
                 <div>
-                  <div className="font-semibold">{user.name}</div>
+                  <div className="font-semibold">{user?.name || 'Organizer'}</div>
                   <div className="text-sm text-muted-foreground">Event Organizer</div>
                 </div>
               </div>
