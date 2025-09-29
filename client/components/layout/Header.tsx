@@ -35,7 +35,7 @@ export default function Header() {
 
         {/* Icons */}
         <div className="ml-2 flex items-center gap-2">
-          <button className="grid h-10 w-10 place-items-center rounded-full bg-secondary text-secondary-foreground shadow hover:brightness-95">
+          <button onClick={() => { window.location.href = '/calendar'; }} className="grid h-10 w-10 place-items-center rounded-full bg-secondary text-secondary-foreground shadow hover:brightness-95">
             <CalendarDays className="h-5 w-5" />
           </button>
           <button className="grid h-10 w-10 place-items-center rounded-full bg-secondary text-secondary-foreground shadow hover:brightness-95">
