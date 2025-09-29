@@ -34,6 +34,7 @@ export const events: EventItem[] = [
     ],
     bannerUrl:
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1400&auto=format&fit=crop",
+    description: "A hands-on talk on AI & Machine Learning basics. Perfect for beginners — code samples and Q&A included.",
   },
   {
     id: "3",
