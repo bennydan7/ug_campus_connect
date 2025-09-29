@@ -17,6 +17,7 @@ export const events: EventItem[] = [
     ],
     bannerUrl:
       "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1400&auto=format&fit=crop",
+    description: "Welcome new students! Join the campus tour followed by a casual mixer to meet fellow students, clubs, and faculty. Light refreshments provided.",
   },
   {
     id: "2",
