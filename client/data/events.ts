@@ -8,6 +8,7 @@ export const events: EventItem[] = [
     time: "10:00 AM - 12:00 PM",
     location: "Main Quad",
     category: "Social",
+    attendees: 120,
     bannerUrl:
       "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1400&auto=format&fit=crop",
   },
@@ -18,6 +19,7 @@ export const events: EventItem[] = [
     time: "5:30 PM - 7:00 PM",
     location: "Engineering Hall 201",
     category: "Academic",
+    attendees: 85,
     bannerUrl:
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1400&auto=format&fit=crop",
   },
@@ -28,6 +30,7 @@ export const events: EventItem[] = [
     time: "11:00 AM - 3:00 PM",
     location: "Student Center Ballroom",
     category: "Career",
+    attendees: 250,
     bannerUrl:
       "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1400&auto=format&fit=crop",
   },
@@ -38,6 +41,7 @@ export const events: EventItem[] = [
     time: "7:00 PM - 9:00 PM",
     location: "Athletics Field A",
     category: "Sports",
+    attendees: 300,
     bannerUrl:
       "https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?q=80&w=1400&auto=format&fit=crop",
   },
@@ -48,6 +52,7 @@ export const events: EventItem[] = [
     time: "2:00 PM - 3:30 PM",
     location: "Library Room 3B",
     category: "Academic",
+    attendees: 45,
     bannerUrl:
       "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1400&auto=format&fit=crop",
   },
@@ -58,6 +63,7 @@ export const events: EventItem[] = [
     time: "8:00 PM - 10:30 PM",
     location: "Cafe 42",
     category: "Social",
+    attendees: 150,
     bannerUrl:
       "https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1400&auto=format&fit=crop",
   },
@@ -68,6 +74,7 @@ export const events: EventItem[] = [
     time: "6:00 PM - 8:00 PM",
     location: "Innovation Hub",
     category: "Career",
+    attendees: 90,
     bannerUrl:
       "https://images.unsplash.com/photo-1524169358666-79f22534bc6e?q=80&w=1400&auto=format&fit=crop",
   },
@@ -78,7 +85,30 @@ export const events: EventItem[] = [
     time: "7:30 PM - 9:30 PM",
     location: "Campus Arena",
     category: "Sports",
+    attendees: 520,
     bannerUrl:
       "https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1400&auto=format&fit=crop",
+  },
+  {
+    id: "9",
+    title: "Campus Art Fair: Student Showcase",
+    dateISO: "2025-10-20",
+    time: "12:00 PM - 5:00 PM",
+    location: "Arts Quad",
+    category: "Arts",
+    attendees: 60,
+    bannerUrl:
+      "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1400&auto=format&fit=crop",
+  },
+  {
+    id: "10",
+    title: "Wellness Workshop: Mindfulness & Stress Relief",
+    dateISO: "2025-10-22",
+    time: "3:00 PM - 4:30 PM",
+    location: "Wellness Center",
+    category: "Health",
+    attendees: 35,
+    bannerUrl:
+      "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1400&auto=format&fit=crop",
   },
 ];
