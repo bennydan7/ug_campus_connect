@@ -12,6 +12,7 @@ import Calendar from "./pages/Calendar";
 import EventDetails from "./pages/EventDetails";
 import Organizer from "./pages/Organizer";
 import Notifications from "./pages/Notifications";
+import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import Logout from "./pages/Logout";
 import Header from "@/components/layout/Header";
@@ -35,6 +36,7 @@ const App = () => (
             <Route path="/events/:id" element={<EventDetails />} />
             <Route path="/organizer" element={<Organizer />} />
             <Route path="/notifications" element={<Notifications />} />
+            <Route path="/signup" element={<SignUp />} />
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
