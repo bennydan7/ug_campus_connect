@@ -40,7 +40,7 @@ export default function Header() {
           <button onClick={() => { window.location.href = '/calendar'; }} className="grid h-10 w-10 place-items-center rounded-full bg-secondary text-secondary-foreground shadow hover:brightness-95">
             <CalendarDays className="h-5 w-5" />
           </button>
-          <button className="grid h-10 w-10 place-items-center rounded-full bg-secondary text-secondary-foreground shadow hover:brightness-95">
+          <button onClick={() => navigate('/notifications')} className="grid h-10 w-10 place-items-center rounded-full bg-secondary text-secondary-foreground shadow hover:brightness-95">
             <Bell className="h-5 w-5" />
           </button>
           <button
