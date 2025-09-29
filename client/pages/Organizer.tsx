@@ -1,7 +1,11 @@
 import { useMemo, useState } from "react";
 import { PlusCircle, BarChart2, Calendar, Edit2, Trash2, LogIn, LogOut } from "lucide-react";
 import { events as allEventsData } from "@/data/events";
-import { v4 as uuidv4 } from "uuid";
+
+// local id generator to avoid uuid dependency in the dev environment
+function genId() {
+  return 'ev_' + Math.random().toString(36).slice(2, 9) + Date.now().toString(36).slice(-4);
+}
 
 type EventForm = {
   id?: string;
