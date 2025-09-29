@@ -101,11 +101,11 @@ export default function Organizer() {
 
               <div className="mt-6 border-t pt-4">
                 {!isLoggedIn ? (
-                  <button onClick={() => setIsLoggedIn(true)} className="flex w-full items-center justify-center gap-2 rounded-md bg-primary px-3 py-2 text-sm font-semibold text-primary-foreground">
+                  <button onClick={() => navigate('/login')} className="flex w-full items-center justify-center gap-2 rounded-md bg-primary px-3 py-2 text-sm font-semibold text-primary-foreground">
                     <LogIn className="h-4 w-4" /> Login
                   </button>
                 ) : (
-                  <button onClick={() => { setIsLoggedIn(false); setSelectedTab('My Events'); }} className="flex w-full items-center justify-center gap-2 rounded-md bg-muted px-3 py-2 text-sm font-semibold">
+                  <button onClick={() => { logout(); setSelectedTab('My Events'); }} className="flex w-full items-center justify-center gap-2 rounded-md bg-muted px-3 py-2 text-sm font-semibold">
                     <LogOut className="h-4 w-4" /> Logout
                   </button>
                 )}
