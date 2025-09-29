@@ -148,7 +148,7 @@ export default function Organizer() {
                     <div className="text-center py-20">
                       <div className="text-lg font-semibold">Please login to create events</div>
                       <div className="mt-4">
-                        <button onClick={() => setIsLoggedIn(true)} className="rounded-md bg-primary px-4 py-2 font-semibold text-primary-foreground">Login</button>
+                        <button onClick={() => navigate('/login')} className="rounded-md bg-primary px-4 py-2 font-semibold text-primary-foreground">Login</button>
                       </div>
                     </div>
                   ) : (
