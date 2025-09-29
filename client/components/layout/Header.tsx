@@ -1,10 +1,12 @@
 import { useSearch } from "@/context/SearchContext";
 import { Bell, CalendarDays, GraduationCap, Menu, Search } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const { query, setQuery } = useSearch();
   const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
