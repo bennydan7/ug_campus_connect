@@ -1,8 +1,23 @@
 import { cn } from "@/lib/utils";
 
-export type Category = "All" | "Academic" | "Social" | "Sports" | "Career";
+export type Category =
+  | "All"
+  | "Academic"
+  | "Social"
+  | "Sports"
+  | "Career"
+  | "Arts"
+  | "Health";
 
-const categories: Category[] = ["All", "Academic", "Social", "Sports", "Career"];
+const categories: Category[] = [
+  "All",
+  "Academic",
+  "Social",
+  "Sports",
+  "Career",
+  "Arts",
+  "Health",
+];
 
 export default function FilterBar({
   active,
@@ -30,11 +45,19 @@ export default function FilterBar({
             </button>
           ))}
         </div>
-        <div className="hidden items-center gap-2 sm:flex">
-          <span className="text-sm text-muted-foreground">Color tags:</span>
-          <span className="h-3 w-3 rounded-full bg-primary/80 shadow" />
-          <span className="h-3 w-3 rounded-full bg-secondary/80 shadow" />
-          <span className="h-3 w-3 rounded-full bg-accent/80 shadow" />
+        <div className="hidden items-center gap-3 sm:flex">
+          <button
+            onClick={() => onChange("All")}
+            className="text-sm text-primary underline-offset-4 hover:underline"
+          >
+            Clear filters
+          </button>
+          <div className="flex items-center gap-2">
+            <span className="text-sm text-muted-foreground">Color tags:</span>
+            <span className="h-3 w-3 rounded-full bg-primary/80 shadow" />
+            <span className="h-3 w-3 rounded-full bg-secondary/80 shadow" />
+            <span className="h-3 w-3 rounded-full bg-accent/80 shadow" />
+          </div>
         </div>
       </div>
     </div>
