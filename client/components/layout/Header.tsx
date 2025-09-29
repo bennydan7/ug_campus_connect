@@ -2,11 +2,14 @@ import { useSearch } from "@/context/SearchContext";
 import { Bell, CalendarDays, GraduationCap, Menu, Search } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "@/context/AuthContext";
 
 export default function Header() {
   const { query, setQuery } = useSearch();
   const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const { user, logout } = useAuth();
 
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
@@ -50,9 +53,31 @@ export default function Header() {
           >
             <Search className="h-5 w-5" />
           </button>
-          <button onClick={() => navigate('/organizer')} className="hidden h-10 w-10 items-center justify-center rounded-full bg-muted shadow hover:brightness-95 md:flex">
-            <Menu className="h-5 w-5 text-foreground" />
-          </button>
+          <div className="relative">
+            <button onClick={() => setMenuOpen((v) => !v)} className="hidden h-10 w-10 items-center justify-center rounded-full bg-muted shadow hover:brightness-95 md:flex">
+              <Menu className="h-5 w-5 text-foreground" />
+            </button>
+
+            {menuOpen && (
+              <div className="absolute right-0 top-12 z-50 w-56 rounded-xl bg-white p-3 shadow">
+                <div className="flex flex-col gap-2">
+                  {!user ? (
+                    <>
+                      <button onClick={() => { setMenuOpen(false); navigate('/login'); }} className="text-left rounded-md px-3 py-2 text-sm hover:bg-muted/50">Login</button>
+                      <button onClick={() => { setMenuOpen(false); navigate('/'); }} className="text-left rounded-md px-3 py-2 text-sm hover:bg-muted/50">Sign up</button>
+                    </>
+                  ) : (
+                    <>
+                      <div className="px-3 py-2 text-sm font-semibold">Hello, {user.name}</div>
+                      <button onClick={() => { setMenuOpen(false); navigate('/organizer'); }} className="text-left rounded-md px-3 py-2 text-sm hover:bg-muted/50">Organizer Dashboard</button>
+                      <button onClick={() => { setMenuOpen(false); navigate('/notifications'); }} className="text-left rounded-md px-3 py-2 text-sm hover:bg-muted/50">Notifications</button>
+                      <button onClick={() => { logout(); setMenuOpen(false); navigate('/'); }} className="text-left rounded-md px-3 py-2 text-sm text-destructive hover:bg-muted/50">Logout</button>
+                    </>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
