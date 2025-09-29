@@ -64,7 +64,7 @@ export default function Header() {
                   {!user ? (
                     <>
                       <button onClick={() => { setMenuOpen(false); navigate('/login'); }} className="text-left rounded-md px-3 py-2 text-sm hover:bg-muted/50">Login</button>
-                      <button onClick={() => { setMenuOpen(false); navigate('/'); }} className="text-left rounded-md px-3 py-2 text-sm hover:bg-muted/50">Sign up</button>
+                      <button onClick={() => { setMenuOpen(false); navigate('/signup'); }} className="text-left rounded-md px-3 py-2 text-sm hover:bg-muted/50">Sign up</button>
                     </>
                   ) : (
                     <>
