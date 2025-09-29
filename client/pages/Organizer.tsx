@@ -1,6 +1,9 @@
 import { useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { PlusCircle, BarChart2, Calendar, Edit2, Trash2, LogIn, LogOut } from "lucide-react";
 import { events as allEventsData } from "@/data/events";
+import { useAuth } from "@/context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 // local id generator to avoid uuid dependency in the dev environment
 function genId() {
