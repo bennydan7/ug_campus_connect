@@ -12,6 +12,8 @@ import Calendar from "./pages/Calendar";
 import EventDetails from "./pages/EventDetails";
 import Organizer from "./pages/Organizer";
 import Notifications from "./pages/Notifications";
+import Login from "./pages/Login";
+import Logout from "./pages/Logout";
 import Header from "@/components/layout/Header";
 import { SearchProvider } from "@/context/SearchContext";
 import { AuthProvider } from "@/context/AuthContext";
