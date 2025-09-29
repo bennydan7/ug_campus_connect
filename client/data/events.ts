@@ -69,6 +69,7 @@ export const events: EventItem[] = [
     ],
     bannerUrl:
       "https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?q=80&w=1400&auto=format&fit=crop",
+    description: "Cheer for your team at the semi-finals — food trucks and halftime entertainment will be available.",
   },
   {
     id: "5",
@@ -84,6 +85,7 @@ export const events: EventItem[] = [
     ],
     bannerUrl:
       "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1400&auto=format&fit=crop",
+    description: "Improve your study habits with proven techniques, time management tips, and group exercises to prepare for midterms.",
   },
   {
     id: "6",
@@ -100,6 +102,7 @@ export const events: EventItem[] = [
     ],
     bannerUrl:
       "https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1400&auto=format&fit=crop",
+    description: "Showcase your talent at the Open Mic – music, poetry, and comedy welcome. Sign-up starts an hour before the show.",
   },
   {
     id: "7",
@@ -115,6 +118,7 @@ export const events: EventItem[] = [
     ],
     bannerUrl:
       "https://images.unsplash.com/photo-1524169358666-79f22534bc6e?q=80&w=1400&auto=format&fit=crop",
+    description: "An evening to connect with mentors and peers in STEM fields. Light refreshments and mentor tables available.",
   },
   {
     id: "8",
@@ -132,6 +136,7 @@ export const events: EventItem[] = [
     ],
     bannerUrl:
       "https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1400&auto=format&fit=crop",
+    description: "Final game of the season — bring your friends and support the Eagles! Tickets available at the gate.",
   },
   {
     id: "9",
