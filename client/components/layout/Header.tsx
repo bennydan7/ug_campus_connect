@@ -15,7 +15,7 @@ export default function Header() {
             <GraduationCap className="h-6 w-6" />
           </div>
           <div className="leading-tight">
-            <div className="text-lg font-extrabold tracking-tight">Campus Event Hub</div>
+            <div className="text-lg font-extrabold tracking-tight">UG Campus Connect</div>
             <div className="text-xs text-muted-foreground">Discover • Join • Connect</div>
           </div>
         </div>
