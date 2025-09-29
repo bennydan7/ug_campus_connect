@@ -9,6 +9,12 @@ export const events: EventItem[] = [
     location: "Main Quad",
     category: "Social",
     attendees: 120,
+    attendeesList: [
+      { name: "Aisha Mensah", avatarUrl: "https://i.pravatar.cc/150?img=5" },
+      { name: "Kwame Nkrumah", avatarUrl: "https://i.pravatar.cc/150?img=12" },
+      { name: "Lina Owusu", avatarUrl: "https://i.pravatar.cc/150?img=19" },
+      { name: "Daniel K.", avatarUrl: "https://i.pravatar.cc/150?img=28" },
+    ],
     bannerUrl:
       "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1400&auto=format&fit=crop",
   },
@@ -20,6 +26,11 @@ export const events: EventItem[] = [
     location: "Engineering Hall 201",
     category: "Academic",
     attendees: 85,
+    attendeesList: [
+      { name: "Maya Patel", avatarUrl: "https://i.pravatar.cc/150?img=3" },
+      { name: "Owen Lee", avatarUrl: "https://i.pravatar.cc/150?img=7" },
+      { name: "Priya R.", avatarUrl: "https://i.pravatar.cc/150?img=11" },
+    ],
     bannerUrl:
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1400&auto=format&fit=crop",
   },
@@ -31,6 +42,12 @@ export const events: EventItem[] = [
     location: "Student Center Ballroom",
     category: "Career",
     attendees: 250,
+    attendeesList: [
+      { name: "Samuel Osei", avatarUrl: "https://i.pravatar.cc/150?img=14" },
+      { name: "Nora Green", avatarUrl: "https://i.pravatar.cc/150?img=16" },
+      { name: "Ethan P.", avatarUrl: "https://i.pravatar.cc/150?img=22" },
+      { name: "Sofia B.", avatarUrl: "https://i.pravatar.cc/150?img=30" },
+    ],
     bannerUrl:
       "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1400&auto=format&fit=crop",
   },
@@ -42,6 +59,11 @@ export const events: EventItem[] = [
     location: "Athletics Field A",
     category: "Sports",
     attendees: 300,
+    attendeesList: [
+      { name: "Coach Mensah", avatarUrl: "https://i.pravatar.cc/150?img=6" },
+      { name: "J. Brown", avatarUrl: "https://i.pravatar.cc/150?img=9" },
+      { name: "Alex K.", avatarUrl: "https://i.pravatar.cc/150?img=18" },
+    ],
     bannerUrl:
       "https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?q=80&w=1400&auto=format&fit=crop",
   },
@@ -53,6 +75,10 @@ export const events: EventItem[] = [
     location: "Library Room 3B",
     category: "Academic",
     attendees: 45,
+    attendeesList: [
+      { name: "Tina A.", avatarUrl: "https://i.pravatar.cc/150?img=2" },
+      { name: "Ravi S.", avatarUrl: "https://i.pravatar.cc/150?img=4" },
+    ],
     bannerUrl:
       "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1400&auto=format&fit=crop",
   },
@@ -64,6 +90,11 @@ export const events: EventItem[] = [
     location: "Cafe 42",
     category: "Social",
     attendees: 150,
+    attendeesList: [
+      { name: "Liam G.", avatarUrl: "https://i.pravatar.cc/150?img=10" },
+      { name: "Zara H.", avatarUrl: "https://i.pravatar.cc/150?img=13" },
+      { name: "Miriam", avatarUrl: "https://i.pravatar.cc/150?img=17" },
+    ],
     bannerUrl:
       "https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1400&auto=format&fit=crop",
   },
@@ -75,6 +106,10 @@ export const events: EventItem[] = [
     location: "Innovation Hub",
     category: "Career",
     attendees: 90,
+    attendeesList: [
+      { name: "Grace N.", avatarUrl: "https://i.pravatar.cc/150?img=21" },
+      { name: "Isabella", avatarUrl: "https://i.pravatar.cc/150?img=23" },
+    ],
     bannerUrl:
       "https://images.unsplash.com/photo-1524169358666-79f22534bc6e?q=80&w=1400&auto=format&fit=crop",
   },
@@ -86,6 +121,12 @@ export const events: EventItem[] = [
     location: "Campus Arena",
     category: "Sports",
     attendees: 520,
+    attendeesList: [
+      { name: "Marcus", avatarUrl: "https://i.pravatar.cc/150?img=24" },
+      { name: "Eve L.", avatarUrl: "https://i.pravatar.cc/150?img=25" },
+      { name: "Sam K.", avatarUrl: "https://i.pravatar.cc/150?img=26" },
+      { name: "Rita", avatarUrl: "https://i.pravatar.cc/150?img=27" },
+    ],
     bannerUrl:
       "https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1400&auto=format&fit=crop",
   },
@@ -97,6 +138,9 @@ export const events: EventItem[] = [
     location: "Arts Quad",
     category: "Arts",
     attendees: 60,
+    attendeesList: [
+      { name: "Ana B.", avatarUrl: "https://i.pravatar.cc/150?img=29" },
+    ],
     bannerUrl:
       "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1400&auto=format&fit=crop",
   },
@@ -108,6 +152,9 @@ export const events: EventItem[] = [
     location: "Wellness Center",
     category: "Health",
     attendees: 35,
+    attendeesList: [
+      { name: "Noah", avatarUrl: "https://i.pravatar.cc/150?img=8" },
+    ],
     bannerUrl:
       "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1400&auto=format&fit=crop",
   },
