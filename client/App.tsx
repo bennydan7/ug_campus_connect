@@ -14,6 +14,7 @@ import Organizer from "./pages/Organizer";
 import Notifications from "./pages/Notifications";
 import Header from "@/components/layout/Header";
 import { SearchProvider } from "@/context/SearchContext";
+import { AuthProvider } from "@/context/AuthContext";
 
 const queryClient = new QueryClient();
 
@@ -23,9 +24,10 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <SearchProvider>
-          <Header />
-          <Routes>
+        <AuthProvider>
+          <SearchProvider>
+            <Header />
+            <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/events/:id" element={<EventDetails />} />
@@ -35,6 +37,7 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
         </SearchProvider>
+        </AuthProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
