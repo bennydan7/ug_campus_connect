@@ -69,7 +69,7 @@ export default function Organizer() {
   function handleUpdate() {
     if (!editingId) return;
     setEvents((s) =>
-      s.map((e) => (e.id === editingId ? { ...e, ...form, id: editingId } : e)),
+      s.map((e) => (e.id === editingId ? ({ ...e, ...form, id: editingId } as any) : e)),
     );
     setEditingId(null);
     setSelectedTab("My Events");
