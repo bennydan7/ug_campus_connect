@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useMemo, useState } from 'react'
 import FilterBar, { type Category } from '../components/FilterBar'
 import EventCard from '../components/EventCard'
