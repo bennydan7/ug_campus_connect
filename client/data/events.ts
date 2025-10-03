@@ -5,7 +5,7 @@ export const events: EventItem[] = [
     id: "1",
     title: "Freshers' Welcome: Campus Tour & Mixer",
     dateISO: "2025-10-01",
-    time: "10:00 AM - 12:00 PM",
+    time: "10:00 AM - 1:00 PM",
     location: "R. S. Amegashie Hall",
     category: "Social",
     attendees: 120,
