@@ -3,12 +3,13 @@ import path from "path";
 import { defineConfig } from "vite";
 
 export default defineConfig(() => ({
-  root: path.resolve(__dirname, "client"),
+  // Use project root so Vite picks up the root index.html
+  root: path.resolve(__dirname, "."),
   server: {
     host: "::",
     port: 5173,
     fs: {
-      allow: ["./client", "./shared"],
+      allow: ["./", "./client", "./shared"],
       deny: [".env", ".env.*", "*.{crt,pem}", "**/.git/**", "server/**"],
     },
   },
