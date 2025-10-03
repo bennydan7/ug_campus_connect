@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState } from 'react'
 import { Mail, Lock, User, GraduationCap, Calendar } from 'lucide-react'
 import { useRouter } from 'next/navigation'
