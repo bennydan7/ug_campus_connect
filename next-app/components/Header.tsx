@@ -1,3 +1,5 @@
+"use client"
+
 import Link from 'next/link'
 import { GraduationCap, Search, CalendarDays, Bell, Menu } from 'lucide-react'
 import { useState } from 'react'
