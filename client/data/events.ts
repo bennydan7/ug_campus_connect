@@ -6,7 +6,7 @@ export const events: EventItem[] = [
     title: "Freshers' Welcome: Campus Tour & Mixer",
     dateISO: "2025-10-01",
     time: "10:00 AM - 12:00 PM",
-    location: "Main Quad",
+    location: "R. S. Amegashie Hall",
     category: "Social",
     attendees: 120,
     attendeesList: [
@@ -25,7 +25,7 @@ export const events: EventItem[] = [
     title: "Tech Talk: Intro to AI & Machine Learning",
     dateISO: "2025-10-03",
     time: "5:30 PM - 7:00 PM",
-    location: "Engineering Hall 201",
+    location: "Great Hall",
     category: "Academic",
     attendees: 85,
     attendeesList: [
@@ -43,7 +43,7 @@ export const events: EventItem[] = [
     title: "Career Fair: Meet Top Employers",
     dateISO: "2025-10-05",
     time: "11:00 AM - 3:00 PM",
-    location: "Student Center Ballroom",
+    location: "Cedi Conference Centre",
     category: "Career",
     attendees: 250,
     attendeesList: [
@@ -62,7 +62,7 @@ export const events: EventItem[] = [
     title: "Intramural Soccer: Semi-Finals Night",
     dateISO: "2025-10-07",
     time: "7:00 PM - 9:00 PM",
-    location: "Athletics Field A",
+    location: "Legon Sports Stadium",
     category: "Sports",
     attendees: 300,
     attendeesList: [
@@ -80,7 +80,7 @@ export const events: EventItem[] = [
     title: "Study Skills Workshop: Acing Midterms",
     dateISO: "2025-10-09",
     time: "2:00 PM - 3:30 PM",
-    location: "Library Room 3B",
+    location: "Balme Library Seminar Room",
     category: "Academic",
     attendees: 45,
     attendeesList: [
@@ -97,7 +97,7 @@ export const events: EventItem[] = [
     title: "Open Mic Night: Music & Poetry",
     dateISO: "2025-10-11",
     time: "8:00 PM - 10:30 PM",
-    location: "Cafe 42",
+    location: "VSA Lab",
     category: "Social",
     attendees: 150,
     attendeesList: [
@@ -115,7 +115,7 @@ export const events: EventItem[] = [
     title: "Women in STEM Networking Evening",
     dateISO: "2025-10-12",
     time: "6:00 PM - 8:00 PM",
-    location: "Innovation Hub",
+    location: "Software Lab",
     category: "Career",
     attendees: 90,
     attendeesList: [
@@ -132,7 +132,7 @@ export const events: EventItem[] = [
     title: "Basketball Finals: Eagles vs. Wolves",
     dateISO: "2025-10-14",
     time: "7:30 PM - 9:30 PM",
-    location: "Campus Arena",
+    location: "Commonwealth Hall Quadrangle",
     category: "Sports",
     attendees: 520,
     attendeesList: [
@@ -151,7 +151,7 @@ export const events: EventItem[] = [
     title: "Campus Art Fair: Student Showcase",
     dateISO: "2025-10-20",
     time: "12:00 PM - 5:00 PM",
-    location: "Arts Quad",
+    location: "Central Cafeteria Plaza",
     category: "Arts",
     attendees: 60,
     attendeesList: [
@@ -167,7 +167,7 @@ export const events: EventItem[] = [
     title: "Wellness Workshop: Mindfulness & Stress Relief",
     dateISO: "2025-10-22",
     time: "3:00 PM - 4:30 PM",
-    location: "Wellness Center",
+    location: "Hardware Lab",
     category: "Health",
     attendees: 35,
     attendeesList: [

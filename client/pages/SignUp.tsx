@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useAuth } from "@/context/AuthContext";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 import { User, Mail, Lock, GraduationCap, Calendar } from "lucide-react";
 
 export default function SignUp() {
   const { login } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,7 +17,9 @@ export default function SignUp() {
     e.preventDefault();
     // Simulate signup by storing user in context
     login({ name: name || email.split("@")[0] || "Organizer", email });
-    navigate("/organizer");
+    const params = new URLSearchParams(location.search);
+    const redirect = params.get("redirect") || "/organizer";
+    navigate(redirect);
   }
 
   return (

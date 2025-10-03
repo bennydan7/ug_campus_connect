@@ -5,7 +5,7 @@ import { createRoot } from "react-dom/client";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Calendar from "./pages/Calendar";
@@ -17,7 +17,7 @@ import Login from "./pages/Login";
 import Logout from "./pages/Logout";
 import Header from "@/components/layout/Header";
 import { SearchProvider } from "@/context/SearchContext";
-import { AuthProvider } from "@/context/AuthContext";
+import { AuthProvider, useAuth } from "@/context/AuthContext";
 
 const queryClient = new QueryClient();
 
@@ -34,7 +34,14 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/calendar" element={<Calendar />} />
               <Route path="/events/:id" element={<EventDetails />} />
-              <Route path="/organizer" element={<Organizer />} />
+              <Route
+                path="/organizer"
+                element={
+                  <RequireAuth>
+                    <Organizer />
+                  </RequireAuth>
+                }
+              />
               <Route path="/notifications" element={<Notifications />} />
               <Route path="/signup" element={<SignUp />} />
               <Route path="/login" element={<Login />} />
@@ -48,5 +55,15 @@ const App = () => (
     </TooltipProvider>
   </QueryClientProvider>
 );
+
+function RequireAuth({ children }: { children: React.ReactNode }) {
+  const { user } = useAuth();
+  const location = useLocation();
+  if (!user) {
+    const redirect = encodeURIComponent(location.pathname + location.search);
+    return <Navigate to={`/login?redirect=${redirect}`} replace />;
+  }
+  return <>{children}</>;
+}
 
 createRoot(document.getElementById("root")!).render(<App />);

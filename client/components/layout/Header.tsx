@@ -1,7 +1,7 @@
 import { useSearch } from "@/context/SearchContext";
 import { Bell, CalendarDays, GraduationCap, Menu, Search } from "lucide-react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
 
 export default function Header() {
@@ -15,7 +15,7 @@ export default function Header() {
     <header className="sticky top-0 z-40 w-full border-b bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="container mx-auto flex items-center gap-3 py-3">
         {/* Logo */}
-        <div className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2" aria-label="Go to homepage">
           <div className="grid h-10 w-10 place-items-center rounded-xl bg-primary text-primary-foreground shadow">
             <GraduationCap className="h-6 w-6" />
           </div>
@@ -27,7 +27,7 @@ export default function Header() {
               Discover • Join • Connect
             </div>
           </div>
-        </div>
+        </Link>
 
         {/* Search */}
         <div className="ml-auto hidden min-w-[280px] max-w-xl flex-1 items-center md:flex">
