@@ -36,6 +36,13 @@ export default function Organizer() {
   const { user, login, logout } = useAuth();
   const navigate = useNavigate();
   const isLoggedIn = !!user;
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      // redirect to login with flag
+      navigate('/login?unauthorized=1');
+    }
+  }, [isLoggedIn, navigate]);
   const [events, setEvents] = useState(allEventsData);
   const [selectedTab, setSelectedTab] = useState<
     "My Events" | "Create Event" | "Analytics"
