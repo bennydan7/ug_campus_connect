@@ -3,7 +3,7 @@ import path from "path";
 import { defineConfig } from "vite";
 
 export default defineConfig(() => ({
-  root: path.resolve(__dirname, "client"),
+  root: path.resolve(__dirname),
   server: {
     host: "::",
     port: 5173,
