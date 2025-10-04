@@ -61,14 +61,8 @@ export default function Index() {
             <UsageStats />
           </div>
           <div className="mt-4 lg:mt-0 lg:w-96">
-            <div className="rounded-lg border bg-white p-4 shadow-sm">
-              <h4 className="text-sm font-semibold">Stay updated</h4>
-              <p className="text-xs text-muted-foreground mt-1">Subscribe to weekly highlights</p>
-              <div className="mt-3 flex gap-2">
-                <input placeholder="you@university.edu" className="w-full rounded-lg border px-3 py-2 text-sm" />
-                <button className="rounded-md bg-primary px-3 py-2 text-sm text-primary-foreground">Subscribe</button>
-              </div>
-            </div>
+            {/* Live events panel replaces the previous "Stay updated" subscription box */}
+            <LiveEvents />
           </div>
         </div>
       </div>
