@@ -4,6 +4,10 @@ import React, { useMemo, useState } from 'react'
 import FilterBar, { type Category } from '../components/FilterBar'
 import EventCard from '../components/EventCard'
 import { events as allEvents } from '../data/events'
+import UsageStats from '../components/UsageStats'
+import Testimonials from '../components/Testimonials'
+import TrustedBy from '../components/TrustedBy'
+import NoEvents from '../components/NoEvents'
 
 export default function Home() {
   const [category, setCategory] = useState<Category>('All')
