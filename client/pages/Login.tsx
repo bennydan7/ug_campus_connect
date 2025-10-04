@@ -1,9 +1,20 @@
 import { useState } from "react";
 import { useAuth } from "@/context/AuthContext";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { useNavigate, Link } from "react-router-dom";
 import { Mail, Lock } from "lucide-react";
 
 export default function Login() {
+  const location = useLocation();
+  const [unauthorized, setUnauthorized] = useState(false);
+
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams(location.search);
+      if (params.get("unauthorized")) setUnauthorized(true);
+    } catch {}
+  }, [location.search]);
   const { login } = useAuth();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
