@@ -80,7 +80,10 @@ export default function Login() {
             </div>
 
             <div className="pt-4 text-center text-sm text-muted-foreground">
-              Don't have an account? <Link to="/signup" className="text-primary underline">Sign up</Link>
+              Don't have an account?{" "}
+              <Link to="/signup" className="text-primary underline">
+                Sign up
+              </Link>
             </div>
 
             <div className="mt-4 grid gap-2">
