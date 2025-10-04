@@ -7,6 +7,7 @@ import UsageStats from "@/components/UsageStats";
 import Testimonials from "@/components/Testimonials";
 import TrustedBy from "@/components/TrustedBy";
 import NoEvents from "@/components/NoEvents";
+import LiveEvents from "@/components/LiveEvents";
 
 export default function Index() {
   const [category, setCategory] = useState<Category>("All");
