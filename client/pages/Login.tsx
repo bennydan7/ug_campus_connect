@@ -1,8 +1,6 @@
-import { useState } from "react";
-import { useAuth } from "@/context/AuthContext";
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import { useNavigate, Link } from "react-router-dom";
+import { useAuth } from "@/context/AuthContext";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import { Mail, Lock } from "lucide-react";
 
 export default function Login() {
