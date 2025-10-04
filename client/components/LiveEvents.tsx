@@ -50,33 +50,59 @@ export default function LiveEvents() {
   return (
     <div className="rounded-lg border bg-white p-4 shadow-sm">
       <h4 className="text-sm font-semibold">Live events</h4>
-      <p className="text-xs text-muted-foreground mt-1">Ongoing events happening right now</p>
+      <p className="text-xs text-muted-foreground mt-1">
+        Ongoing events happening right now
+      </p>
 
       <div className="mt-3 space-y-3">
         {liveNow.length > 0 ? (
           liveNow.map((e) => (
-            <Link to={`/events/${e.id}`} key={e.id} className="flex items-center gap-3 rounded-md p-2 hover:bg-muted/50">
-              <img src={e.bannerUrl} alt={e.title} className="h-10 w-16 rounded-md object-cover" />
+            <Link
+              to={`/events/${e.id}`}
+              key={e.id}
+              className="flex items-center gap-3 rounded-md p-2 hover:bg-muted/50"
+            >
+              <img
+                src={e.bannerUrl}
+                alt={e.title}
+                className="h-10 w-16 rounded-md object-cover"
+              />
               <div className="flex-1">
                 <div className="text-sm font-medium">{e.title}</div>
-                <div className="text-xs text-muted-foreground">{e.time} • {e.location}</div>
+                <div className="text-xs text-muted-foreground">
+                  {e.time} • {e.location}
+                </div>
               </div>
-              <div className="text-xs rounded-full bg-destructive/80 px-2 py-1 text-destructive-foreground">LIVE</div>
+              <div className="text-xs rounded-full bg-destructive/80 px-2 py-1 text-destructive-foreground">
+                LIVE
+              </div>
             </Link>
           ))
         ) : today.length > 0 ? (
           // show today's events if none live now
           today.map((e) => (
-            <Link to={`/events/${e.id}`} key={e.id} className="flex items-center gap-3 rounded-md p-2 hover:bg-muted/50">
-              <img src={e.bannerUrl} alt={e.title} className="h-10 w-16 rounded-md object-cover" />
+            <Link
+              to={`/events/${e.id}`}
+              key={e.id}
+              className="flex items-center gap-3 rounded-md p-2 hover:bg-muted/50"
+            >
+              <img
+                src={e.bannerUrl}
+                alt={e.title}
+                className="h-10 w-16 rounded-md object-cover"
+              />
               <div className="flex-1">
                 <div className="text-sm font-medium">{e.title}</div>
-                <div className="text-xs text-muted-foreground">{e.time} • {e.location}</div>
+                <div className="text-xs text-muted-foreground">
+                  {e.time} • {e.location}
+                </div>
               </div>
             </Link>
           ))
         ) : (
-          <div className="text-sm text-muted-foreground">No live events right now. Check back later.</div>
+          <div className="text-sm text-muted-foreground">
+            No live events right now. Check back later.
+          </div>
         )}
       </div>
     </div>
