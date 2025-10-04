@@ -3,6 +3,10 @@ import FilterBar, { type Category } from "@/components/FilterBar";
 import EventCard from "@/components/EventCard";
 import { events as allEvents } from "@/data/events";
 import { useSearch } from "@/context/SearchContext";
+import UsageStats from "@/components/UsageStats";
+import Testimonials from "@/components/Testimonials";
+import TrustedBy from "@/components/TrustedBy";
+import NoEvents from "@/components/NoEvents";
 
 export default function Index() {
   const [category, setCategory] = useState<Category>("All");
@@ -50,17 +54,32 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Stats + subscribe */}
+      <div className="container mx-auto mt-6 px-4">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+          <div className="lg:flex-1">
+            <UsageStats />
+          </div>
+          <div className="mt-4 lg:mt-0 lg:w-96">
+            <div className="rounded-lg border bg-white p-4 shadow-sm">
+              <h4 className="text-sm font-semibold">Stay updated</h4>
+              <p className="text-xs text-muted-foreground mt-1">Subscribe to weekly highlights</p>
+              <div className="mt-3 flex gap-2">
+                <input placeholder="you@university.edu" className="w-full rounded-lg border px-3 py-2 text-sm" />
+                <button className="rounded-md bg-primary px-3 py-2 text-sm text-primary-foreground">Subscribe</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Filters */}
       <FilterBar active={category} onChange={setCategory} />
 
       {/* Feed */}
       <main className="container mx-auto pb-12 pt-6">
         {events.length === 0 ? (
-          <div className="grid place-items-center rounded-3xl border bg-white p-12 text-center shadow-sm">
-            <p className="text-muted-foreground">
-              No events match your search. Try a different keyword or category.
-            </p>
-          </div>
+          <NoEvents />
         ) : (
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {events.map((event) => (
@@ -68,6 +87,9 @@ export default function Index() {
             ))}
           </div>
         )}
+
+        <TrustedBy />
+        <Testimonials />
       </main>
     </div>
   );
