@@ -22,7 +22,9 @@ export default function Login() {
     e.preventDefault();
     // fake auth: accept any email/password for demo
     login({ name: email.split("@")[0] || "Organizer", email });
-    navigate("/organizer");
+    const params = new URLSearchParams(location.search);
+    const redirect = params.get("redirect") || "/organizer";
+    navigate(redirect);
   }
 
   return (
@@ -68,11 +70,7 @@ export default function Login() {
             </label>
 
             <div className="flex items-center justify-between">
-              <div className="text-sm">
-                <Link to="#" className="text-primary underline">
-                  Forgot password?
-                </Link>
-              </div>
+              <div className="text-sm" />
               <button
                 type="submit"
                 className="rounded-full bg-primary px-4 py-2 font-semibold text-primary-foreground"
@@ -82,10 +80,7 @@ export default function Login() {
             </div>
 
             <div className="pt-4 text-center text-sm text-muted-foreground">
-              Don't have an account?{" "}
-              <Link to="#" className="text-primary underline">
-                Sign up
-              </Link>
+              Don't have an account? <Link to="/signup" className="text-primary underline">Sign up</Link>
             </div>
 
             <div className="mt-4 grid gap-2">
