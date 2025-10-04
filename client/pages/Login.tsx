@@ -31,6 +31,11 @@ export default function Login() {
     <div className="min-h-screen bg-background/50 flex items-center justify-center p-6">
       <div className="max-w-4xl rounded-2xl bg-white shadow-lg md:flex md:overflow-hidden w-full">
         <div className="p-8 md:w-1/2">
+          {unauthorized && (
+            <div className="rounded-md border-l-4 border-destructive/80 bg-destructive/10 p-3 text-sm text-destructive mb-4">
+              You must be logged in to access that page. Please sign in.
+            </div>
+          )}
           <h2 className="text-2xl font-extrabold">Welcome back</h2>
           <p className="mt-2 text-sm text-muted-foreground">
             Log in to manage your events and see notifications.
